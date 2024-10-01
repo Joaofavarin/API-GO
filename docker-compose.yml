@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      context: .  
+      dockerfile: api/Dockerfile  
+    volumes:
+      - ./api:/app/api
+      - ./handlers:/app/handlers
+    ports:
+      - "8081:8080" 
+    environment:
+      - AIR_WATCH=1
